@@ -33,16 +33,73 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
    shiftc6, shiftd6, shiftc7, shiftd7, shiftc8, shiftd8, 
    shiftc9, shiftd9, shiftc10, shiftd10, shiftc11, shiftd12, 
    shiftc12, shiftd12, shiftc13, shiftd13, shiftc14, shiftd14, 
-   shiftc15, shiftd15;
+   shiftc15, shiftd15, shiftc16, shiftd16;
 
    PC1 x(key, c1, d1);
 
    assign shiftc1 = (c1[26:0], c1[27]);
    assign shiftd1 = (d1[26:0], d1[27]);
    PC2 y(shiftc1, shiftd1, SubKey1);
-
-//Continue the process above for all Subkeys
    
+   assign shiftc2 = (shiftc1[26:0], shiftc1[27]);
+   assign shiftd2 = (shiftd1[26:0], shiftd1[27]);
+   PC2 y(shiftc2, shiftd2, SubKey2);
+   
+   assign shiftc3 = (shiftc2[25:0], shiftc2[27:26]);
+   assign shiftd3 = (shiftd2[25:0], shiftd2[27:26]);
+   PC2 y(shiftc3, shiftd3, SubKey3);
+   
+   assign shiftc4 = (shiftc3[25:0], shiftc3[27:26]);
+   assign shiftd4 = (shiftd3[25:0], shiftd3[27:26]);
+   PC2 y(shiftc4, shiftd4, SubKey4);
+   
+   assign shiftc5 = (shiftc4[25:0], shiftc4[27:26]);
+   assign shiftd5 = (shiftd4[25:0], shiftd4[27:26]);
+   PC2 y(shiftc5, shiftd5, SubKey5);
+   
+   assign shiftc6 = (shiftc5[25:0], shiftc5[27:26]);
+   assign shiftd6 = (shiftd5[25:0], shiftd5[27:26]);
+   PC2 y(shiftc6, shiftd6, SubKey6);
+   
+   assign shiftc7 = (shiftc6[25:0], shiftc6[27:26]);
+   assign shiftd7 = (shiftd6[25:0], shiftd6[27:26]);
+   PC2 y(shiftc7, shiftd7, SubKey7);
+   
+   assign shiftc8 = (shiftc7[25:0], shiftd7[27:26]);
+   assign shiftd8 = (shiftd7[25:0], shiftd7[27:26]);
+   PC2 y(shiftc8, shiftd8, SubKey8);
+   
+   assign shiftc9 = (shiftc8[26:0], shiftd8[27]);
+   assign shiftd9 = (shiftd8[26:0], shiftd8[27]);
+   PC2 y(shiftc9, shiftd9, SubKey9);
+
+   assign shiftc10 = (shiftc9[25:0], shiftc9[27:26]);
+   assign shiftd10 = (shiftd9[25:0], shiftd9[27:26]);
+   PC2 y(shiftc10, shiftd10, SubKey10);
+   
+   assign shiftc11 = (shiftc10[25:0], shiftc10[27:26]);
+   assign shiftd11 = (shiftd10[25:0], shiftd10[27:26]);
+   PC2 y(shiftc11, shiftd11, SubKey11);
+   
+   assign shiftc12 = (shiftc11[25:0], shiftc11[27:26]);
+   assign shiftd12 = (shiftd11[25:0], shiftd11[27:26]);
+   PC2 y(shiftc12, shiftd12, SubKey12);
+   
+   assign shiftc13 = (shiftc12[25:0], shiftc12[27:26]);
+   assign shiftd13 = (shiftd12[25:0], shiftd12[27:26]);
+   PC2 y(shiftc13, shiftd11, SubKey13);
+   
+   assign shiftc14 = (shiftc13[25:0], shiftc13[27:26]);
+   assign shiftd14 = (shiftd13[25:0], shiftd13[27:26]);
+   PC2 y(shiftc14, shiftd14, SubKey14);
+   
+   assign shiftc15 = (shiftc14[25:0], shiftc14[27:26]);
+   assign shiftd15 = (shiftd14[25:0], shiftd14[27:26]);
+   PC2 y(shiftc15, shiftd15, SubKey15);
+
+   assign shiftc16 = (shiftc15[26:0], shiftc15[27]);
+   assign shiftd16 = (shiftd15[26:0], shiftd15[27]);
+   PC2 y(shiftc16, shiftd16, SubKey16);
 
 endmodule // GenerateKeys
 
@@ -1033,5 +1090,3 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    FP FP({r16_out[31:0], r16_out[63:32]}, ciphertext);
    
 endmodule // DES
-
-
