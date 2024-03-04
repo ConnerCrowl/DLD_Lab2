@@ -1181,7 +1181,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    logic [47:0] 	SubKey13, SubKey14, SubKey15, SubKey16;
 
    logic [63:0]	ip_in;
-   logic [63:0] 	ip_out;
+   logic [63:0] ip_out;
    logic [63:0]	ip_out2;
    logic [63:0]	r1_out;
    logic [63:0]	r2_out;
@@ -1198,7 +1198,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    logic [63:0]	r13_out;
    logic [63:0]	r14_out;
    logic [63:0]	r15_out;
-   logic [63:0] 	r16_out;
+   logic [63:0] r16_out;
 
    assign  ip_in = cbc ? (encrypt ? (IV^plaintext):(plaintext)):(plaintext);
 

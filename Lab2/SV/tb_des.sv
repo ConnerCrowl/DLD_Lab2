@@ -3,63 +3,67 @@ module stimulus;
 
    logic [63:0]  key;
    logic [63:0]  plaintext;
-   logic 	 encrypt;
+   logic         encrypt;
    logic [63:0]  ciphertext;
 
-   logic 	 clk;
+   logic         clk;
    logic [31:0]  errors;
    logic [31:0]  vectornum;
    logic [63:0]  result;
-   logic [7:0] 	 op;   
+   logic [7:0]   op;
    logic [199:0] testvectors[511:0];
-     
-   
-   integer 	 handle3;
-   integer 	 desc3;
-   integer 	 i;  
-   integer       j;
+     logic [63:0] IV;
+     logic cbc;
+     assign IV = 64'h0;
+     //assign IV = 64'hAAAA_FFFF_0000_5555;
 
-   DES dut (key, plaintext, encrypt, ciphertext);
+   integer      handle3;
+   integer      desc3;
+   integer      i;
+   integer      j;
+
+   DES dut (key, plaintext, encrypt, ciphertext, IV, cbc);
 
    // 1 ns clock
    initial 
-     begin	
-	clk = 1'b1;
-	forever #5 clk = ~clk;
+     begin
+    clk = 1'b1;
+    forever #5 clk = ~clk;
      end
 
    initial
      begin
-	handle3 = $fopen("des.out");
-	$readmemh("des.tv", testvectors);	
-	vectornum = 0;
-	errors = 0;		
-	desc3 = handle3;
+    handle3 = $fopen("des.out");
+    $readmemh("des.tv", testvectors);
+    vectornum = 0;
+    errors = 0;
+    desc3 = handle3;
      end
 
    // apply test vectors on rising edge of clk
    always @(posedge clk)
      begin
-	#1; {plaintext, op, key, result} = testvectors[vectornum];
-	#0 encrypt = op[0];		  
-     end  
+    #1; {plaintext, op, key, result} = testvectors[vectornum];
+    #0 encrypt = op[0];
+  cbc = op[1];
+     end
 
    // check results on falling edge of clk
   always @(negedge clk)
     begin
        if (result != ciphertext)
-	 begin
-	    errors = errors + 1;
-	 end
-       $fdisplay(desc3, "%h %h %b || %h || %h %b", 
-		 plaintext, key, encrypt, ciphertext, result, (result == ciphertext));
+     begin
+        errors = errors + 1;
+     end
+       $fdisplay(desc3, "%h %h %b  %h  %h %b", 
+         plaintext, key, encrypt, ciphertext, result, (result == ciphertext));
        vectornum = vectornum + 1;
        if (testvectors[vectornum] === 200'bx) 
-	 begin 
-	    $display("%d tests completed with %d errors", 
-		     vectornum, errors);
-	    $finish;
-	 end
+     begin 
+        $display("%d tests completed with %d errors", 
+             vectornum, errors);
+        $finish;
+     end
     end
 
 endmodule // stimulus
