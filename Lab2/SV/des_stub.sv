@@ -169,16 +169,16 @@ module PC1 (Key, left_block, right_block);
    assign out_block[12] = Key[64-6];   
    assign out_block[11] = Key[64-61];
    assign out_block[10] = Key[64-53];
-   assign out_block[9] = Key[64-45];
-   assign out_block[8] = Key[64-37];
-   assign out_block[7] = Key[64-29];
-   assign out_block[6] = Key[64-21];
-   assign out_block[5] = Key[64-13];
-   assign out_block[4] = Key[64-5];   
-   assign out_block[3] = Key[64-28];
-   assign out_block[2] = Key[64-20];    
-   assign out_block[1] = Key[64-12];
-   assign out_block[0] = Key[64-4];
+   assign out_block[9] 	= Key[64-45];
+   assign out_block[8] 	= Key[64-37];
+   assign out_block[7] 	= Key[64-29];
+   assign out_block[6] 	= Key[64-21];
+   assign out_block[5] 	= Key[64-13];
+   assign out_block[4]	= Key[64-5];   
+   assign out_block[3] 	= Key[64-28];
+   assign out_block[2]	= Key[64-20];    
+   assign out_block[1] 	= Key[64-12];
+   assign out_block[0] 	= Key[64-4];
 
    assign left_block = out_block[55:28];
    assign right_block = out_block[27:0];
@@ -232,16 +232,16 @@ module PC2 (left_block, right_block, subkey);
    assign subkey[12] = out_block[56-48];   
    assign subkey[11] = out_block[56-44];
    assign subkey[10] = out_block[56-49];
-   assign subkey[9] = out_block[56-39];
-   assign subkey[8] = out_block[56-56];
-   assign subkey[7] = out_block[56-34];
-   assign subkey[6] = out_block[56-53];
-   assign subkey[5] = out_block[56-46];
-   assign subkey[4] = out_block[56-42];   
-   assign subkey[3] = out_block[56-50];
-   assign subkey[2] = out_block[56-36];    
-   assign subkey[1] = out_block[56-29];
-   assign subkey[0] = out_block[56-32];
+   assign subkey[9]	 = out_block[56-39];
+   assign subkey[8]  = out_block[56-56];
+   assign subkey[7]  = out_block[56-34];
+   assign subkey[6]  = out_block[56-53];
+   assign subkey[5]  = out_block[56-46];
+   assign subkey[4]  = out_block[56-42];   
+   assign subkey[3]  = out_block[56-50];
+   assign subkey[2]  = out_block[56-36];    
+   assign subkey[1]  = out_block[56-29];
+   assign subkey[0]  = out_block[56-32];
 
 endmodule // PC2
 
@@ -273,16 +273,16 @@ module SF (inp_block, out_block);
    assign out_block[12] = inp_block[32-14];   
    assign out_block[11] = inp_block[32-32];
    assign out_block[10] = inp_block[32-27];
-   assign out_block[9] = inp_block[32-3];
-   assign out_block[8] = inp_block[32-9];
-   assign out_block[7] = inp_block[32-19];
-   assign out_block[6] = inp_block[32-13];
-   assign out_block[5] = inp_block[32-30];
-   assign out_block[4] = inp_block[32-6];   
-   assign out_block[3] = inp_block[32-22];
-   assign out_block[2] = inp_block[32-11];    
-   assign out_block[1] = inp_block[32-4];
-   assign out_block[0] = inp_block[32-25];
+   assign out_block[9]  = inp_block[32-3];
+   assign out_block[8]  = inp_block[32-9];
+   assign out_block[7]  = inp_block[32-19];
+   assign out_block[6]  = inp_block[32-13];
+   assign out_block[5]  = inp_block[32-30];
+   assign out_block[4]  = inp_block[32-6];   
+   assign out_block[3]  = inp_block[32-22];
+   assign out_block[2]  = inp_block[32-11];    
+   assign out_block[1]  = inp_block[32-4];
+   assign out_block[0]  = inp_block[32-25];
 
 endmodule // SF
 
@@ -330,16 +330,16 @@ module EF (inp_block, out_block);
    assign out_block[12] = inp_block[32-25];   
    assign out_block[11] = inp_block[32-24];
    assign out_block[10] = inp_block[32-25];
-   assign out_block[9] = inp_block[32-26];
-   assign out_block[8] = inp_block[32-27];
-   assign out_block[7] = inp_block[32-28];
-   assign out_block[6] = inp_block[32-29];
-   assign out_block[5] = inp_block[32-28];
-   assign out_block[4] = inp_block[32-29];   
-   assign out_block[3] = inp_block[32-30];
-   assign out_block[2] = inp_block[32-31];    
-   assign out_block[1] = inp_block[32-32];
-   assign out_block[0] = inp_block[32-1];
+   assign out_block[9]  = inp_block[32-26];
+   assign out_block[8]  = inp_block[32-27];
+   assign out_block[7]  = inp_block[32-28];
+   assign out_block[6]  = inp_block[32-29];
+   assign out_block[5]  = inp_block[32-28];
+   assign out_block[4]  = inp_block[32-29];   
+   assign out_block[3]  = inp_block[32-30];
+   assign out_block[2]  = inp_block[32-31];    
+   assign out_block[1]  = inp_block[32-32];
+   assign out_block[0]  = inp_block[32-1];
 
 endmodule // EF
 
@@ -462,16 +462,16 @@ module IP (inp_block, out_block);
    assign out_block[12] = inp_block[64-37];   
    assign out_block[11] = inp_block[64-29];
    assign out_block[10] = inp_block[64-21];
-   assign out_block[9] = inp_block[64-13];
-   assign out_block[8] = inp_block[64-5];
-   assign out_block[7] = inp_block[64-63];
-   assign out_block[6] = inp_block[64-55];
-   assign out_block[5] = inp_block[64-47];
-   assign out_block[4] = inp_block[64-39];   
-   assign out_block[3] = inp_block[64-31];
-   assign out_block[2] = inp_block[64-23];    
-   assign out_block[1] = inp_block[64-15];
-   assign out_block[0] = inp_block[64-7];   
+   assign out_block[9]  = inp_block[64-13];
+   assign out_block[8]  = inp_block[64-5];
+   assign out_block[7]  = inp_block[64-63];
+   assign out_block[6]  = inp_block[64-55];
+   assign out_block[5]  = inp_block[64-47];
+   assign out_block[4]  = inp_block[64-39];   
+   assign out_block[3]  = inp_block[64-31];
+   assign out_block[2]  = inp_block[64-23];    
+   assign out_block[1]  = inp_block[64-15];
+   assign out_block[0]  = inp_block[64-7];   
 
 endmodule // IP
 
@@ -535,16 +535,16 @@ module FP (inp_block, out_block);
    assign out_block[12] = inp_block[64-10];   
    assign out_block[11] = inp_block[64-50];
    assign out_block[10] = inp_block[64-18];
-   assign out_block[9] = inp_block[64-58];
-   assign out_block[8] = inp_block[64-26];   
-   assign out_block[7] = inp_block[64-33];
-   assign out_block[6] = inp_block[64-1];
-   assign out_block[5] = inp_block[64-41];   
-   assign out_block[4] = inp_block[64-9];
-   assign out_block[3] = inp_block[64-49];    
-   assign out_block[2] = inp_block[64-17];
-   assign out_block[1] = inp_block[64-57];
-   assign out_block[0] = inp_block[64-25];  
+   assign out_block[9]  = inp_block[64-58];
+   assign out_block[8]  = inp_block[64-26];   
+   assign out_block[7]  = inp_block[64-33];
+   assign out_block[6]  = inp_block[64-1];
+   assign out_block[5]  = inp_block[64-41];   
+   assign out_block[4]  = inp_block[64-9];
+   assign out_block[3]  = inp_block[64-49];    
+   assign out_block[2]  = inp_block[64-17];
+   assign out_block[1]  = inp_block[64-57];
+   assign out_block[0]  = inp_block[64-25];  
 
 endmodule // FP
 
@@ -1183,6 +1183,7 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    logic [63:0]	ip_in;
    logic [63:0] ip_out;
    logic [63:0]	ip_out2;
+
    logic [63:0]	r1_out;
    logic [63:0]	r2_out;
    logic [63:0]	r3_out;
@@ -1216,69 +1217,83 @@ module DES (input logic [63:0] key, input logic [63:0] plaintext,
    // round 1
    logic [47:0] mux1;
    assign mux1 = encrypt ? SubKey1 : SubKey16;
-   round r1 (ip_out, mux1, r1_out);
+   round rd1 (ip_out, mux1, r1_out);
+
    // round 2
    logic [47:0] mux2;
    assign mux2 = encrypt ? SubKey2 : SubKey15;
-   round r2 (r1_out, mux2, r2_out);
+   round rd2 (r1_out, mux2, r2_out);
+
    // round 3
    logic [47:0] mux3;
    assign mux3 = encrypt ? SubKey3 : SubKey14;
-   round r3 (r2_out, mux3, r3_out);
+   round rd3 (r2_out, mux3, r3_out);
+
    // round 4
    logic [47:0] mux4;
    assign mux4 = encrypt ? SubKey4 : SubKey13;
-   round r4 (r3_out, mux4, r4_out);
+   round rd4 (r3_out, mux4, r4_out);
+
    // round 5
    logic [47:0] mux5;
    assign mux5 = encrypt ? SubKey5 : SubKey12;
-   round r5 (r4_out, mux5, r5_out);
+   round rd5 (r4_out, mux5, r5_out);
+
    // round 6
    logic [47:0] mux6;
    assign mux6 = encrypt ? SubKey6 : SubKey11;
-   round r6 (r5_out, mux6, r6_out);
+   round rd6 (r5_out, mux6, r6_out);
+
    // round 7
    logic [47:0] mux7;
    assign mux7 = encrypt ? SubKey7 : SubKey10;
-   round r7 (r6_out, mux7, r7_out);
+   round rd7 (r6_out, mux7, r7_out);
+
    // round 8
    logic [47:0] mux8;
    assign mux8 = encrypt ? SubKey8 : SubKey9;
-   round r8 (r7_out, mux8, r8_out);
+   round rd8 (r7_out, mux8, r8_out);
+
    // round 9
    logic [47:0] mux9;
    assign mux9 = encrypt ? SubKey9 : SubKey8;
-   round r9 (r8_out, mux9, r9_out);
+   round rd9 (r8_out, mux9, r9_out);
+
    // round 10
    logic [47:0] mux10;
    assign mux10 = encrypt ? SubKey10 : SubKey7;
-   round r10 (r9_out, mux10, r10_out);
+   round rd10 (r9_out, mux10, r10_out);
+
    // round 11
    logic [47:0] mux11;
    assign mux11 = encrypt ? SubKey11 : SubKey6;
-   round r11 (r10_out, mux11, r11_out);
+   round rd11 (r10_out, mux11, r11_out);
+
    // round 12
    logic [47:0] mux12;
    assign mux12 = encrypt ? SubKey12 : SubKey5;
-   round r12 (r11_out, mux12, r12_out);
+   round rd12 (r11_out, mux12, r12_out);
+
    // round 13
    logic [47:0] mux13;
    assign mux13 = encrypt ? SubKey13 : SubKey4;
-   round r13 (r12_out, mux13, r13_out);
+   round rd13 (r12_out, mux13, r13_out);
+
    // round 14
    logic [47:0] mux14;
    assign mux14 = encrypt ? SubKey14 : SubKey3;
-   round r14 (r13_out, mux14, r14_out);
+   round rd14 (r13_out, mux14, r14_out);
+
    // round 15
    logic [47:0] mux15;
    assign mux15 = encrypt ? SubKey15 : SubKey2;
-   round r15 (r14_out, mux15, r15_out);
+   round rd15 (r14_out, mux15, r15_out);
+
    // round 16
    logic [47:0] mux16;
    assign mux16 = encrypt ? SubKey16 : SubKey1;
-   round r16 (r15_out, mux16, r16_out);
+   round rd16 (r15_out, mux16, r16_out);
 
-   
    // Final Permutation (IP^{-1}) (swap output of round16)
    FP FP({r16_out[31:0], r16_out[63:32]}, ip_out2);
 
