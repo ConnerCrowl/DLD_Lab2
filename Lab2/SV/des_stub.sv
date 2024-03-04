@@ -46,71 +46,71 @@ module GenerateKeys (Key, SubKey1, SubKey2, SubKey3, SubKey4,
 	logic [27:0] C15, D15;
 	logic [27:0] C16, D16;
 
-   PC1 pcz (Key, left_block, right_block);
+   PC1 x (Key, left_block, right_block);
 
    assign C1 = {left_block[26:0], left_block[27]};
    assign D1 = {right_block[26:0], right_block[27]};
-   PC2 pca (C1, D1, SubKey1);
+   PC2 y1 (C1, D1, SubKey1);
    
    assign C2 = {C1[26:0], C1[27]};
    assign D2 = {D1[26:0], D1[27]};
-   PC2 pcb (C2, D2, SubKey2);
+   PC2 y2 (C2, D2, SubKey2);
 
    assign C3 = {C2[25:0], C2[27:26]};
    assign D3 = {D2[25:0], D2[27:26]};
-   PC2 pcc (C3, D3, SubKey3);
+   PC2 y3 (C3, D3, SubKey3);
 
    assign C4 = {C3[25:0], C3[27:26]};
    assign D4 = {D3[25:0], D3[27:26]};
-   PC2 pcd (C4, D4, SubKey4);
+   PC2 y4 (C4, D4, SubKey4);
 
    assign C5 = {C4[25:0], C4[27:26]};
    assign D5 = {D4[25:0], D4[27:26]};
-   PC2 pce (C5, D5, SubKey5);
+   PC2 y5 (C5, D5, SubKey5);
 
    assign C6 = {C5[25:0], C5[27:26]};
    assign D6 = {D5[25:0], D5[27:26]};
-   PC2 pcf (C6, D6, SubKey6);
+   PC2 y6 (C6, D6, SubKey6);
 
    assign C7 = {C6[25:0], C6[27:26]};
    assign D7 = {D6[25:0], D6[27:26]};
-   PC2 pcg (C7, D7, SubKey7);
+   PC2 y7 (C7, D7, SubKey7);
 
    assign C8 = {C7[25:0], C7[27:26]};
    assign D8 = {D7[25:0], D7[27:26]};
-   PC2 pch (C8, D8, SubKey8);
+   PC2 y8 (C8, D8, SubKey8);
 
    assign C9 = {C8[26:0], C8[27]};
    assign D9 = {D8[26:0], D8[27]};
-   PC2 pci (C9, D9, SubKey9);
+   PC2 y9 (C9, D9, SubKey9);
 
    assign C10 = {C9[25:0], C9[27:26]};
    assign D10 = {D9[25:0], D9[27:26]};
-   PC2 pcj (C10, D10, SubKey10);
+   PC2 y10 (C10, D10, SubKey10);
 
    assign C11 = {C10[25:0], C10[27:26]};
    assign D11 = {D10[25:0], D10[27:26]};
-   PC2 pck (C11, D11, SubKey11);
+   PC2 y11 (C11, D11, SubKey11);
 
    assign C12 = {C11[25:0], C11[27:26]};
    assign D12 = {D11[25:0], D11[27:26]};
-   PC2 pcl (C12, D12, SubKey12);
+   PC2 y12 (C12, D12, SubKey12);
 
    assign C13 = {C12[25:0], C12[27:26]};
    assign D13 = {D12[25:0], D12[27:26]};
-   PC2 pcm (C13, D13, SubKey13);
+   PC2 y13 (C13, D13, SubKey13);
 
    assign C14 = {C13[25:0], C13[27:26]};
    assign D14 = {D13[25:0], D13[27:26]};
-   PC2 pcn (C14, D14, SubKey14);
+   PC2 y14 (C14, D14, SubKey14);
 
    assign C15 = {C14[25:0], C14[27:26]};
    assign D15 = {D14[25:0], D14[27:26]};
-   PC2 pco (C15, D15, SubKey15);
+   PC2 y15 (C15, D15, SubKey15);
 
    assign C16 = {C15[26:0], C15[27]};
    assign D16 = {D15[26:0], D15[27]};
-   PC2 pcp (C16, D16, SubKey16);
+   PC2 y16 (C16, D16, SubKey16);
 
 endmodule // GenerateKeys
 
@@ -353,7 +353,7 @@ module feistel (inp_block, subkey, out_block);
    logic [47:0] xor1;
    logic [31:0] out_sbox;
 
-   EF efa (inp_block, out_ef);
+   EF exBlock1 (inp_block, out_ef);
 
    assign xor1 = out_ef ^ subkey;
 
@@ -373,7 +373,7 @@ module feistel (inp_block, subkey, out_block);
 
    S1_Box s1 (xor1[47:42], out_sbox[31:28]);
 
-   SF sfa (out_sbox[31:0], out_block[31:0]);
+   SF straightF1 (out_sbox[31:0], out_block[31:0]);
 
 endmodule // Feistel
 
@@ -394,14 +394,11 @@ module round (inp_block, subkey, out_block);
    assign in_left = inp_block [63:32];
    assign in_right = inp_block [31:0];
 
-   feistel in_fei (in_right, subkey, out_fei);
+   feistel inFeiBlock (in_right, subkey, out_fei);
 
    assign out_block [31:0] = out_fei ^ in_left;
 
    assign out_block [63:32] = in_right;
-
-   //assign out_left = out_block [31:0];
-   //assign out_right = out_block [63:32];
 
 endmodule // round1
 
