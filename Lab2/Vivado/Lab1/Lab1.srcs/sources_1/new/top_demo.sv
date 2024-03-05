@@ -27,6 +27,7 @@ module top_demo
   input  logic [3:0] btn,
   input  logic       sysclk_125mhz,
   input  logic       rst,
+
   // output  
   output logic [7:0] led,
   output logic sseg_ca,
@@ -40,11 +41,47 @@ module top_demo
   output logic [3:0] sseg_an
 );
 
-  logic [16:0] CURRENT_COUNT;
-  logic [16:0] NEXT_COUNT;
-  logic        smol_clk;
+  logic [16:0]  CURRENT_COUNT;
+  logic [16:0]  NEXT_COUNT;
+  logic         smol_clk;
+  logic [63:0]  key;
+  logic [63:0]  plaintext;
+  logic         encrypt;
+  logic [63:0]  ciphertext ;
+  logic [63:0]  IV;
+  logic         cbc;
+  logic output;
   
-  // Place TicTacToe instantiation here
+  assign key = 64'h133457799bbcdff1;
+  assign plaintext = 64'h123456abcd132536;
+  assign IV =  64'h0;
+  assign encrypt = btn[0];
+  assign cbc = btn[1];
+  
+  always @(key, plaintext, ciphertext) begin
+    case(sw[3:0])
+        4'b0000     :  output = [63:48]plaintext;
+        4'b0001     :  output = [48:32]plaintext;
+        4'b0010     :  output = [32:17]plaintext;
+        4'b0011     :  output = [15:0] plaintext;
+        4'b0100     :  output = [63:48]key;
+        4'b0101     :  output = [48:32]key;
+        4'b0110     :  output = [32:17]key;
+        4'b0111     :  output = [15:0] key;
+        4'b1000     :  output = [63:48]ciphertext;
+        4'b1001     :  output = [48:32]ciphertext;
+        4'b1010     :  output = [32:17]ciphertext;
+        4'b1011     :  output = [15:0] ciphertext;
+        4'b1100     :  output = [63:48]IV;
+        4'b1101     :  output = [48:32]IV;
+        4'b1110     :  output = [31:16]IV;
+        4'b1111     :  output = [15:0] IV;
+        Default     : output = 16’bx
+    endcase
+   end
+  
+  // Place DES instantiation here
+   DES dut (key, plaintext, encrypt, ciphertext, IV, cbc);
   
   // 7-segment display
   segment_driver driver(
