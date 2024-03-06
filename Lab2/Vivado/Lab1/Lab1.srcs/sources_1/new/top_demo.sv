@@ -50,7 +50,7 @@ module top_demo
   logic [63:0]  ciphertext ;
   logic [63:0]  IV;
   logic         cbc;
-  logic output;
+  logic [15:0]  dispOut;
   
   assign key = 64'h133457799bbcdff1;
   assign plaintext = 64'h123456abcd132536;
@@ -60,23 +60,23 @@ module top_demo
   
   always @(key, plaintext, ciphertext) begin
     case(sw[3:0])
-        4'b0000     :  output = [63:48]plaintext;
-        4'b0001     :  output = [48:32]plaintext;
-        4'b0010     :  output = [32:17]plaintext;
-        4'b0011     :  output = [15:0] plaintext;
-        4'b0100     :  output = [63:48]key;
-        4'b0101     :  output = [48:32]key;
-        4'b0110     :  output = [32:17]key;
-        4'b0111     :  output = [15:0] key;
-        4'b1000     :  output = [63:48]ciphertext;
-        4'b1001     :  output = [48:32]ciphertext;
-        4'b1010     :  output = [32:17]ciphertext;
-        4'b1011     :  output = [15:0] ciphertext;
-        4'b1100     :  output = [63:48]IV;
-        4'b1101     :  output = [48:32]IV;
-        4'b1110     :  output = [31:16]IV;
-        4'b1111     :  output = [15:0] IV;
-        Default     : output = 16’bx
+        4'b0000     :  dispOut = [63:48]plaintext;
+        4'b0001     :  dispOut = [48:32]plaintext;
+        4'b0010     :  dispOut = [32:17]plaintext;
+        4'b0011     :  dispOut = [15:0] plaintext;
+        4'b0100     :  dispOut = [63:48]key;
+        4'b0101     :  dispOut = [48:32]key;
+        4'b0110     :  dispOut = [32:17]key;
+        4'b0111     :  dispOut = [15:0] key;
+        4'b1000     :  dispOut = [63:48]ciphertext;
+        4'b1001     :  dispOut = [48:32]ciphertext;
+        4'b1010     :  dispOut = [32:17]ciphertext;
+        4'b1011     :  dispOut = [15:0] ciphertext;
+        4'b1100     :  dispOut = [63:48]IV;
+        4'b1101     :  dispOut = [48:32]IV;
+        4'b1110     :  dispOut = [31:16]IV;
+        4'b1111     :  dispOut = [15:0] IV;
+        Default     :  dispOut = 16’bx
     endcase
    end
   
