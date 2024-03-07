@@ -55,28 +55,32 @@ module top_demo
   assign key = 64'h133457799bbcdff1;
   assign plaintext = 64'h123456abcd132536;
   assign IV =  64'h0;
-  assign encrypt = btn[0];
-  assign cbc = btn[1];
+  assign encrypt = sw[7];
+  assign cbc = sw[6];
+
+  //Das Parity Bits, ya
+  assign led[0] = key[7]^key[15]^key[23]^key[31]^key[39]^key[47]^key[55]^key[63]; //a-boum
   
-  always @(key, plaintext, ciphertext) begin
+  always_comb
+     begin
     case(sw[3:0])
-        4'b0000     :  dispOut = [63:48]plaintext;
-        4'b0001     :  dispOut = [48:32]plaintext;
-        4'b0010     :  dispOut = [32:17]plaintext;
-        4'b0011     :  dispOut = [15:0] plaintext;
-        4'b0100     :  dispOut = [63:48]key;
-        4'b0101     :  dispOut = [48:32]key;
-        4'b0110     :  dispOut = [32:17]key;
-        4'b0111     :  dispOut = [15:0] key;
-        4'b1000     :  dispOut = [63:48]ciphertext;
-        4'b1001     :  dispOut = [48:32]ciphertext;
-        4'b1010     :  dispOut = [32:17]ciphertext;
-        4'b1011     :  dispOut = [15:0] ciphertext;
-        4'b1100     :  dispOut = [63:48]IV;
-        4'b1101     :  dispOut = [48:32]IV;
-        4'b1110     :  dispOut = [31:16]IV;
-        4'b1111     :  dispOut = [15:0] IV;
-        Default     :  dispOut = 16’bx
+        4'b0000     :  dispOut = plaintext[63:48];
+        4'b0001     :  dispOut = plaintext[47:32];
+        4'b0010     :  dispOut = plaintext[31:16];
+        4'b0011     :  dispOut = plaintext[15:0]; 
+        4'b0100     :  dispOut = key[63:48];
+        4'b0101     :  dispOut = key[47:32];
+        4'b0110     :  dispOut = key[31:16];
+        4'b0111     :  dispOut = key[15:0] ;
+        4'b1000     :  dispOut = ciphertext[63:48];
+        4'b1001     :  dispOut = ciphertext[47:32];
+        4'b1010     :  dispOut = ciphertext[31:16];
+        4'b1011     :  dispOut = ciphertext[15:0] ;
+        4'b1100     :  dispOut = IV[63:48];
+        4'b1101     :  dispOut = IV[47:32];
+        4'b1110     :  dispOut = IV[31:16];
+        4'b1111     :  dispOut = IV[15:0]; 
+        default     :  dispOut = 64'h0;
     endcase
    end
   
@@ -87,10 +91,10 @@ module top_demo
   segment_driver driver(
   .clk(smol_clk),
   .rst(btn[3]),
-  .digit0(sw[3:0]),
-  .digit1(4'b0111),
-  .digit2(sw[7:4]),
-  .digit3(4'b1111),
+  .digit0(dispOut[3:0]),
+  .digit1(dispOut[7:4]),
+  .digit2(dispOut[11:8]),
+  .digit3(dispOut[15:12]),
   .decimals({1'b0, btn[2:0]}),
   .segment_cathodes({sseg_dp, sseg_cg, sseg_cf, sseg_ce, sseg_cd, sseg_cc, sseg_cb, sseg_ca}),
   .digit_anodes(sseg_an)
