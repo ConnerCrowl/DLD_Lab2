@@ -1,12 +1,14 @@
 #-----------------------------------------------------------
-# Vivado v2020.2 (64-bit)
-# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
-# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Feb 12 09:19:58 2021
-# Process ID: 441401
-# Current directory: /home/jstine/vivado/Demo2/Demo2.runs/synth_1
-# Command line: vivado -log top_demo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_demo.tcl
-# Log file: /home/jstine/vivado/Demo2/Demo2.runs/synth_1/top_demo.vds
-# Journal file: /home/jstine/vivado/Demo2/Demo2.runs/synth_1/vivado.jou
+# Vivado v2023.1.1 (64-bit)
+# SW Build 3900603 on Fri Jun 16 19:31:24 MDT 2023
+# IP Build 3900379 on Sat Jun 17 05:28:05 MDT 2023
+# SharedData Build 3899622 on Fri Jun 16 03:34:24 MDT 2023
+# Start of session at: Mon Mar 11 11:58:58 2024
+# Process ID: 33372
+# Current directory: C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1
+# Command line: vivado.exe -log top_demo.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_demo.tcl
+# Log file: C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1/top_demo.vds
+# Journal file: C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1\vivado.jou
+# Running On: CEAT-ENDV350-06, OS: Windows, CPU Frequency: 2496 MHz, CPU Physical cores: 8, Host memory: 68431 MB
 #-----------------------------------------------------------
 source top_demo.tcl -notrace

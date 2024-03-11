@@ -1,8 +1,8 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
--------------------------------------------------------------------------------------------------
-| Tool Version              : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date                      : Fri Feb 12 09:24:48 2021
-| Host                      : iq9 running 64-bit Ubuntu 20.04.2 LTS
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version              : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date                      : Mon Mar 11 12:00:32 2024
+| Host                      : CEAT-ENDV350-06 running 64-bit major release  (build 9200)
 | Command                   : report_io -file top_demo_io_placed.rpt
 | Design                    : top_demo
 | Device                    : xc7z020
@@ -10,7 +10,7 @@ Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 | Package                   : clg484
 | Package Version           : FINAL 2012-06-26
 | Package Pin Delay Version : VERS. 2.0 2012-06-26
--------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 IO Information
 
@@ -505,7 +505,7 @@ Table of Contents
 | Y6         | btn[3]        | High Range | IO_L13P_T2_MRCC_13      | INPUT       | LVCMOS33    |      13 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y7         |               | High Range | VCCO_13                 | VCCO        |             |      13 |            |      |                     |                      |    3.30 |            |           |          |      |                  |              |                   |              |
 | Y8         | led[1]        | High Range | IO_L12N_T1_MRCC_13      | TRISTATE    | LVCMOS33    |      13 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
-| Y9         | led[0]        | High Range | IO_L12P_T1_MRCC_13      | TRISTATE    | LVCMOS33    |      13 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
+| Y9         | led[0]        | High Range | IO_L12P_T1_MRCC_13      | OUTPUT      | LVCMOS33    |      13 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |              |                   |              |
 | Y10        |               | High Range | IO_L10N_T1_13           | User IO     |             |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y11        |               | High Range | IO_L10P_T1_13           | User IO     |             |      13 |            |      |                     |                      |         |            |           |          |      |                  |              |                   |              |
 | Y12        |               |            | GND                     | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |              |                   |              |

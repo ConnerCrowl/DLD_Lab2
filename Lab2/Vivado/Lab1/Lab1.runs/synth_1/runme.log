@@ -3,10 +3,13 @@
     with args -log top_demo.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_demo.tcl
 
 
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+****** Vivado v2023.1.1 (64-bit)
+  **** SW Build 3900603 on Fri Jun 16 19:31:24 MDT 2023
+  **** IP Build 3900379 on Sat Jun 17 05:28:05 MDT 2023
+  **** SharedData Build 3899622 on Fri Jun 16 03:34:24 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top_demo.tcl -notrace
 Command: synth_design -top top_demo -part xc7z020clg484-1
@@ -14,67 +17,135 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 441450
+INFO: [Synth 8-7075] Helper process launched with PID 22044
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 2567.281 ; gain = 0.000 ; free physical = 34780 ; free virtual = 48807
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2349.082 ; gain = 410.105
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'top_demo' [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/new/top_demo.sv:23]
-INFO: [Synth 8-6157] synthesizing module 'segment_driver' [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/segment_driver.sv:23]
-	Parameter DIGIT_ZERO bound to: 2'b00 
-	Parameter DIGIT_ONE bound to: 2'b01 
-	Parameter DIGIT_TWO bound to: 2'b10 
-	Parameter DIGIT_THREE bound to: 2'b11 
-INFO: [Synth 8-226] default block is never used [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/segment_driver.sv:63]
-INFO: [Synth 8-6157] synthesizing module 'digit2segments' [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/digit2segments.sv:23]
-INFO: [Synth 8-226] default block is never used [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/digit2segments.sv:30]
-INFO: [Synth 8-6155] done synthesizing module 'digit2segments' (1#1) [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/digit2segments.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'segment_driver' (2#1) [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/segment_driver.sv:23]
-INFO: [Synth 8-6155] done synthesizing module 'top_demo' (3#1) [/home/jstine/vivado/Demo2/Demo2.srcs/sources_1/new/top_demo.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'top_demo' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/new/top_demo.sv:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/new/top_demo.sv:66]
+INFO: [Synth 8-6157] synthesizing module 'DES' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1175]
+INFO: [Synth 8-6157] synthesizing module 'GenerateKeys' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'PC1' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:117]
+INFO: [Synth 8-6155] done synthesizing module 'PC1' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:117]
+INFO: [Synth 8-6157] synthesizing module 'PC2' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:188]
+INFO: [Synth 8-6155] done synthesizing module 'PC2' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:188]
+INFO: [Synth 8-6155] done synthesizing module 'GenerateKeys' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:7]
+INFO: [Synth 8-6157] synthesizing module 'IP' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:406]
+INFO: [Synth 8-6155] done synthesizing module 'IP' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:406]
+INFO: [Synth 8-6157] synthesizing module 'round' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:381]
+INFO: [Synth 8-6157] synthesizing module 'feistel' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:346]
+INFO: [Synth 8-6157] synthesizing module 'EF' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:290]
+INFO: [Synth 8-6155] done synthesizing module 'EF' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:290]
+INFO: [Synth 8-6157] synthesizing module 'S8_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1097]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1104]
+INFO: [Synth 8-6155] done synthesizing module 'S8_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1097]
+INFO: [Synth 8-6157] synthesizing module 'S7_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1019]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1026]
+INFO: [Synth 8-6155] done synthesizing module 'S7_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1019]
+INFO: [Synth 8-6157] synthesizing module 'S6_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:941]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:948]
+INFO: [Synth 8-6155] done synthesizing module 'S6_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:941]
+INFO: [Synth 8-6157] synthesizing module 'S5_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:863]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:870]
+INFO: [Synth 8-6155] done synthesizing module 'S5_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:863]
+INFO: [Synth 8-6157] synthesizing module 'S4_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:785]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:792]
+INFO: [Synth 8-6155] done synthesizing module 'S4_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:785]
+INFO: [Synth 8-6157] synthesizing module 'S3_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:707]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:714]
+INFO: [Synth 8-6155] done synthesizing module 'S3_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:707]
+INFO: [Synth 8-6157] synthesizing module 'S2_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:629]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:636]
+INFO: [Synth 8-6155] done synthesizing module 'S2_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:629]
+INFO: [Synth 8-6157] synthesizing module 'S1_Box' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:551]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:558]
+INFO: [Synth 8-6155] done synthesizing module 'S1_Box' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:551]
+INFO: [Synth 8-6157] synthesizing module 'SF' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:249]
+INFO: [Synth 8-6155] done synthesizing module 'SF' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:249]
+INFO: [Synth 8-6155] done synthesizing module 'feistel' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:346]
+INFO: [Synth 8-6155] done synthesizing module 'round' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:381]
+INFO: [Synth 8-6157] synthesizing module 'FP' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:479]
+INFO: [Synth 8-6155] done synthesizing module 'FP' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:479]
+INFO: [Synth 8-6155] done synthesizing module 'DES' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv:1175]
+INFO: [Synth 8-6157] synthesizing module 'segment_driver' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/segment_driver.sv:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/segment_driver.sv:63]
+INFO: [Synth 8-6157] synthesizing module 'digit2segments' [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/digit2segments.sv:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/digit2segments.sv:30]
+INFO: [Synth 8-6155] done synthesizing module 'digit2segments' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/digit2segments.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'segment_driver' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/segment_driver.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'top_demo' (0#1) [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/new/top_demo.sv:23]
+WARNING: [Synth 8-3917] design top_demo has port led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port left_block[19] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port left_block[10] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port left_block[6] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port left_block[3] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_block[21] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_block[18] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_block[13] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port right_block[2] in module PC2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[56] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[48] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[40] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[32] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[24] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[16] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[8] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port Key[0] in module PC1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module top_demo is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2567.281 ; gain = 0.000 ; free physical = 34806 ; free virtual = 48833
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2444.797 ; gain = 505.820
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2567.281 ; gain = 0.000 ; free physical = 35517 ; free virtual = 49544
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2462.719 ; gain = 523.742
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 2567.281 ; gain = 0.000 ; free physical = 35516 ; free virtual = 49543
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2462.719 ; gain = 523.742
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2567.281 ; gain = 0.000 ; free physical = 35504 ; free virtual = 49532
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 2462.719 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [/home/jstine/vivado/Demo2/Demo2.srcs/constrs_1/new/constr.xdc]
-Finished Parsing XDC File [/home/jstine/vivado/Demo2/Demo2.srcs/constrs_1/new/constr.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [/home/jstine/vivado/Demo2/Demo2.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_demo_propImpl.xdc].
+Parsing XDC File [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/constrs_1/new/constr.xdc]
+Finished Parsing XDC File [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/constrs_1/new/constr.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/constrs_1/new/constr.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_demo_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_demo_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2665.965 ; gain = 0.000 ; free physical = 35466 ; free virtual = 49493
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2575.383 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2665.965 ; gain = 0.000 ; free physical = 35466 ; free virtual = 49493
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 2575.383 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35524 ; free virtual = 49551
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35524 ; free virtual = 49551
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35523 ; free virtual = 49550
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'CURRENT_STATE_reg' in module 'segment_driver'
 ---------------------------------------------------------------------------------------------------
@@ -87,18 +158,19 @@ INFO: [Synth 8-802] inferred FSM for state register 'CURRENT_STATE_reg' in modul
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'CURRENT_STATE_reg' using encoding 'sequential' in module 'segment_driver'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35516 ; free virtual = 49543
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input   17 Bit       Adders := 1     
-+---Registers : 
-	               17 Bit    Registers := 1     
++---XORs : 
+	   2 Input     64 Bit         XORs := 2     
+	   2 Input     48 Bit         XORs := 16    
+	   2 Input     32 Bit         XORs := 16    
 +---Muxes : 
-	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 4     
+	   2 Input   48 Bit        Muxes := 16    
 	   4 Input    8 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
@@ -117,26 +189,145 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-3917] design top_demo has port led[0] driven by constant 0
+WARNING: [Synth 8-7129] Port key[56] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[48] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[40] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[32] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[24] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[16] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[8] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port key[0] in module DES is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[7] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[6] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[3] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[2] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port led[1] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[5] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw[4] in module top_demo is either unconnected or has no load
+WARNING: [Synth 8-7129] Port rst in module top_demo is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35504 ; free virtual = 49535
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 2575.383 ; gain = 636.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------------------+---------------+----------------+
+|Module Name | RTL Object             | Depth x Width | Implemented As | 
++------------+------------------------+---------------+----------------+
+|S8_Box      | out_bits               | 64x4          | LUT            | 
+|S7_Box      | out_bits               | 64x4          | LUT            | 
+|S6_Box      | out_bits               | 64x4          | LUT            | 
+|S5_Box      | out_bits               | 64x4          | LUT            | 
+|S4_Box      | out_bits               | 64x4          | LUT            | 
+|S3_Box      | out_bits               | 64x4          | LUT            | 
+|S2_Box      | out_bits               | 64x4          | LUT            | 
+|S1_Box      | out_bits               | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s2/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s7/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s1/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s3/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s6/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s8/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s4/out_bits | 64x4          | LUT            | 
+|round       | inFeiBlock/s5/out_bits | 64x4          | LUT            | 
++------------+------------------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35382 ; free virtual = 49412
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35382 ; free virtual = 49412
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35381 ; free virtual = 49411
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -154,37 +345,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -201,39 +392,62 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     1|
-|2     |CARRY4 |     4|
+|2     |CARRY4 |     5|
 |3     |LUT1   |     1|
-|4     |LUT2   |     5|
-|5     |LUT3   |     1|
-|6     |LUT4   |     4|
-|7     |LUT5   |    17|
-|8     |LUT6   |    16|
-|9     |MUXF7  |     7|
-|10    |FDRE   |    19|
-|11    |IBUF   |    13|
-|12    |OBUF   |    12|
-|13    |OBUFT  |     8|
+|4     |LUT2   |    95|
+|5     |LUT3   |   150|
+|6     |LUT4   |   157|
+|7     |LUT5   |   166|
+|8     |LUT6   |   723|
+|9     |FDRE   |    19|
+|10    |IBUF   |    11|
+|11    |OBUF   |    13|
+|12    |OBUFT  |     7|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35380 ; free virtual = 49411
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 2575.383 ; gain = 636.406
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 2665.965 ; gain = 0.000 ; free physical = 35436 ; free virtual = 49467
-Synthesis Optimization Complete : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 2665.965 ; gain = 98.684 ; free physical = 35436 ; free virtual = 49467
+Synthesis finished with 0 errors, 0 critical warnings and 20 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:24 . Memory (MB): peak = 2575.383 ; gain = 523.742
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 2575.383 ; gain = 636.406
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2665.965 ; gain = 0.000 ; free physical = 35521 ; free virtual = 49552
-INFO: [Netlist 29-17] Analyzing 11 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2575.383 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 5 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+WARNING: [Netlist 29-101] Netlist 'top_demo' is not ideal for floorplanning, since the cellview 'segment_driver' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2684.879 ; gain = 0.000 ; free physical = 35464 ; free virtual = 49495
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2575.383 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
+Synth Design complete | Checksum: ff0eb317
 INFO: [Common 17-83] Releasing license: Synthesis
-25 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+70 Infos, 48 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:20 ; elapsed = 00:00:18 . Memory (MB): peak = 2684.879 ; gain = 117.926 ; free physical = 35608 ; free virtual = 49639
-INFO: [Common 17-1381] The checkpoint '/home/jstine/vivado/Demo2/Demo2.runs/synth_1/top_demo.dcp' has been generated.
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:42 . Memory (MB): peak = 2575.383 ; gain = 1068.969
+INFO: [Common 17-1381] The checkpoint 'C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1/top_demo.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file top_demo_utilization_synth.rpt -pb top_demo_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Feb 12 09:20:23 2021...
+INFO: [runtcl-4] Executing : report_power -file synth_report_power_0.rpt -pb synth_report_power_summary_0.pb -rpx synth_report_power_0.rpx
+Command: report_power -file synth_report_power_0.rpt -pb synth_report_power_summary_0.pb -rpx synth_report_power_0.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+WARNING: [Power 33-232] No user defined clocks were found in the design! Power estimation will be inaccurate until this is corrected.
+Resolution: Please specify clocks using create_clock/create_generated_clock for sequential elements. For pure combinatorial circuits, please specify a virtual clock, otherwise the vectorless estimation might be inaccurate
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+74 Infos, 49 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file synth_report_methodology_0.rpt -pb synth_report_methodology_0.pb -rpx synth_report_methodology_0.rpx
+Command: report_methodology -file synth_report_methodology_0.rpt -pb synth_report_methodology_0.pb -rpx synth_report_methodology_0.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Vivado_Tcl 2-1520] The results of Report Methodology are in file C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1/synth_report_methodology_0.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_timing -file synth_report_timing_0.rpt -rpx synth_report_timing_0.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [Timing 38-78] ReportTimingParams: -max_paths 1 -nworst 1 -delay_type max -sort_by slack.
+INFO: [runtcl-4] Executing : report_utilization -file top_demo_utilization_synth_1.rpt -pb top_demo_utilization_synth_1.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Mar 11 11:59:53 2024...

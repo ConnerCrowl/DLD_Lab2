@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Fri Feb 12 09:42:37 2021">
+<application name="pa" timeStamp="Mon Mar 11 11:58:59 2024">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="28bbb6dc42f24dc388e90c6cc67df87d" type="ProjectID"/>
-<property name="ProjectIteration" value="26" type="ProjectIteration"/>
+<property name="ProjectIteration" value="31" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -113,11 +113,6 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="TclConsoleView_TCL_CONSOLE_CODE_EDITOR" value="1" type="GuiHandlerData"/>
 <property name="TouchpointSurveyDialog_NO" value="1" type="GuiHandlerData"/>
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="1" type="GuiHandlerData"/>
-</item>
-<item name="Other">
-<property name="GuiMode" value="6" type="GuiMode"/>
-<property name="BatchMode" value="0" type="BatchMode"/>
-<property name="TclMode" value="5" type="TclMode"/>
 </item>
 </section>
 </application>

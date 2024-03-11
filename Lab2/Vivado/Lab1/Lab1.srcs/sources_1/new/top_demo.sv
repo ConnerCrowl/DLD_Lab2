@@ -53,8 +53,8 @@ module top_demo
   logic [15:0]  dispOut;
   
   assign key = 64'h133457799bbcdff1;
-  assign plaintext = 64'h123456abcd132536;
-  assign IV =  64'h0;
+  assign plaintext = 64'hf77bcd7dfe57e119;
+  assign IV =  64'h122456688bbcdee1;
   assign encrypt = sw[7];
   assign cbc = sw[6];
 

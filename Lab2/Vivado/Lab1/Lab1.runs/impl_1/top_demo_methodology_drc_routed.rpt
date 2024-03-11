@@ -1,8 +1,8 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-| Date         : Fri Feb 12 09:25:00 2021
-| Host         : iq9 running 64-bit Ubuntu 20.04.2 LTS
+| Tool Version : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date         : Mon Mar 11 12:00:55 2024
+| Host         : CEAT-ENDV350-06 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file top_demo_methodology_drc_routed.rpt -pb top_demo_methodology_drc_routed.pb -rpx top_demo_methodology_drc_routed.rpx
 | Design       : top_demo
 | Device       : xc7z020clg484-1

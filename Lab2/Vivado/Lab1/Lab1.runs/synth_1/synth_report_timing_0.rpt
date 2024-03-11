@@ -1,0 +1,114 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1.1 (win64) Build 3900603 Fri Jun 16 19:31:24 MDT 2023
+| Date         : Mon Mar 11 11:59:53 2024
+| Host         : CEAT-ENDV350-06 running 64-bit major release  (build 9200)
+| Command      : report_timing -file synth_report_timing_0.rpt -rpx synth_report_timing_0.rpx
+| Design       : top_demo
+| Device       : 7z020-clg484
+| Speed File   : -1  PRODUCTION 1.12 2019-11-22
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack:                    inf
+  Source:                 sw[7]
+                            (input port)
+  Destination:            sseg_cc
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        36.862ns  (logic 8.170ns (22.163%)  route 28.692ns (77.837%))
+  Logic Levels:           40  (IBUF=1 LUT2=5 LUT4=7 LUT5=5 LUT6=21 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                                                      0.000     0.000 r  sw[7] (IN)
+                         net (fo=0)                   0.000     0.000    sw[7]
+                         IBUF (Prop_ibuf_I_O)         0.921     0.921 r  sw_IBUF[7]_inst/O
+                         net (fo=468, unplaced)       0.800     1.721    driver/sw_IBUF[5]
+                         LUT2 (Prop_lut2_I1_O)        0.124     1.845 f  driver/g0_b2__113_i_1/O
+                         net (fo=43, unplaced)        0.528     2.373    driver/g0_b2__113_i_1_n_0
+                         LUT4 (Prop_lut4_I3_O)        0.116     2.489 r  driver/g0_b3__118/O
+                         net (fo=10, unplaced)        0.492     2.981    driver/dut/rd1/out_fei[23]
+                         LUT2 (Prop_lut2_I1_O)        0.124     3.105 r  driver/g0_b0__0_i_1/O
+                         net (fo=4, unplaced)         0.926     4.031    driver/g0_b0__0_i_1_n_0
+                         LUT6 (Prop_lut6_I3_O)        0.124     4.155 r  driver/g0_b3__0/O
+                         net (fo=10, unplaced)        0.492     4.647    driver/dut/rd2/out_fei[8]
+                         LUT2 (Prop_lut2_I1_O)        0.124     4.771 r  driver/g0_b0__4_i_1/O
+                         net (fo=4, unplaced)         0.926     5.697    driver/g0_b0__4_i_1_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124     5.821 r  driver/g0_b0__4/O
+                         net (fo=4, unplaced)         0.473     6.294    driver/dut/rd3/out_fei[13]
+                         LUT4 (Prop_lut4_I0_O)        0.124     6.418 r  driver/g0_b0__13_i_1/O
+                         net (fo=4, unplaced)         1.135     7.553    driver/dut/rd4/inFeiBlock/xor1[20]
+                         LUT6 (Prop_lut6_I1_O)        0.124     7.677 r  driver/g0_b0__13/O
+                         net (fo=5, unplaced)         0.477     8.154    driver/dut/rd4/out_fei[29]
+                         LUT4 (Prop_lut4_I0_O)        0.124     8.278 r  driver/g0_b0__15_i_2/O
+                         net (fo=4, unplaced)         1.135     9.413    driver/dut/rd5/inFeiBlock/xor1[44]
+                         LUT6 (Prop_lut6_I1_O)        0.124     9.537 r  driver/g0_b1__15/O
+                         net (fo=7, unplaced)         0.484    10.021    driver/dut/rd5/out_fei[9]
+                         LUT5 (Prop_lut5_I0_O)        0.116    10.137 r  driver/g0_b0__25_i_1/O
+                         net (fo=4, unplaced)         1.135    11.272    driver/dut/rd6/inFeiBlock/xor1[14]
+                         LUT6 (Prop_lut6_I1_O)        0.124    11.396 r  driver/g0_b0__25/O
+                         net (fo=3, unplaced)         0.467    11.863    driver/dut/rd6/out_fei[13]
+                         LUT5 (Prop_lut5_I0_O)        0.116    11.979 r  driver/g0_b0__37_i_2/O
+                         net (fo=4, unplaced)         1.135    13.114    driver/dut/rd7/inFeiBlock/xor1[20]
+                         LUT6 (Prop_lut6_I1_O)        0.124    13.238 r  driver/g0_b0__37/O
+                         net (fo=6, unplaced)         0.481    13.719    driver/dut/rd7/out_fei[29]
+                         LUT5 (Prop_lut5_I1_O)        0.116    13.835 r  driver/g0_b0__39_i_2/O
+                         net (fo=4, unplaced)         1.135    14.970    driver/dut/rd8/inFeiBlock/xor1[44]
+                         LUT6 (Prop_lut6_I1_O)        0.124    15.094 r  driver/g0_b0__39/O
+                         net (fo=3, unplaced)         0.467    15.561    driver/dut/rd8/out_fei[1]
+                         LUT4 (Prop_lut4_I3_O)        0.124    15.685 r  driver/g0_b0__51_i_2/O
+                         net (fo=6, unplaced)         1.143    16.828    driver/dut/r8_out[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    16.952 r  driver/g0_b2__51/O
+                         net (fo=2, unplaced)         0.460    17.412    driver/dut/rd9/out_fei[5]
+                         LUT5 (Prop_lut5_I4_O)        0.116    17.528 r  driver/g0_b0__54_i_2/O
+                         net (fo=7, unplaced)         1.146    18.674    driver/dut/r9_out[5]
+                         LUT6 (Prop_lut6_I1_O)        0.124    18.798 r  driver/g0_b3__54/O
+                         net (fo=4, unplaced)         0.473    19.271    driver/dut/rd10/out_fei[0]
+                         LUT6 (Prop_lut6_I0_O)        0.124    19.395 r  driver/g0_b3__117_i_1/O
+                         net (fo=4, unplaced)         1.135    20.530    driver/dut/rd11/inFeiBlock/xor1[1]
+                         LUT6 (Prop_lut6_I1_O)        0.124    20.654 r  driver/g0_b2__117/O
+                         net (fo=4, unplaced)         0.473    21.127    driver/dut/rd11/out_fei[5]
+                         LUT6 (Prop_lut6_I0_O)        0.124    21.251 r  driver/g0_b0__68_i_2/O
+                         net (fo=4, unplaced)         1.135    22.386    driver/dut/rd12/inFeiBlock/xor1[8]
+                         LUT6 (Prop_lut6_I1_O)        0.124    22.510 r  driver/g0_b0__68/O
+                         net (fo=1, unplaced)         0.449    22.959    driver/dut/rd12/out_fei[25]
+                         LUT6 (Prop_lut6_I5_O)        0.124    23.083 r  driver/g0_b0__80_i_5/O
+                         net (fo=2, unplaced)         0.460    23.543    driver/dut/r12_out__0[25]
+                         LUT2 (Prop_lut2_I1_O)        0.124    23.667 r  driver/g0_b0__80_i_1/O
+                         net (fo=4, unplaced)         0.926    24.593    driver/dut/rd13/inFeiBlock/xor1[38]
+                         LUT6 (Prop_lut6_I1_O)        0.124    24.717 r  driver/g0_b2__80/O
+                         net (fo=4, unplaced)         0.473    25.190    driver/dut/rd13/out_fei[4]
+                         LUT5 (Prop_lut5_I1_O)        0.124    25.314 r  driver/g0_b0__84_i_1/O
+                         net (fo=8, unplaced)         1.002    26.316    driver/g0_b0__84_i_1_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    26.440 r  driver/g0_b2__84/O
+                         net (fo=2, unplaced)         0.460    26.900    driver/dut/rd14/out_fei[20]
+                         LUT2 (Prop_lut2_I0_O)        0.124    27.024 r  driver/g0_b0__93_i_1/O
+                         net (fo=4, unplaced)         1.135    28.159    driver/dut/rd15/inFeiBlock/xor1[31]
+                         LUT6 (Prop_lut6_I0_O)        0.124    28.283 r  driver/g0_b2__93/O
+                         net (fo=3, unplaced)         0.467    28.750    driver/dut/rd15/out_fei[16]
+                         LUT4 (Prop_lut4_I1_O)        0.124    28.874 r  driver/g0_b0__106_i_6/O
+                         net (fo=4, unplaced)         1.135    30.009    driver/g0_b0__106_i_6_n_0
+                         LUT6 (Prop_lut6_I5_O)        0.124    30.133 r  driver/g0_b1__106/O
+                         net (fo=1, unplaced)         0.449    30.582    driver/dut/rd16/out_fei[7]
+                         LUT4 (Prop_lut4_I3_O)        0.116    30.698 r  driver/sseg_ca_OBUF_inst_i_66/O
+                         net (fo=1, unplaced)         0.449    31.147    driver/dut/r16_out[7]
+                         LUT6 (Prop_lut6_I2_O)        0.124    31.271 f  driver/sseg_ca_OBUF_inst_i_32/O
+                         net (fo=1, unplaced)         0.449    31.720    driver/sseg_ca_OBUF_inst_i_32_n_0
+                         LUT6 (Prop_lut6_I0_O)        0.124    31.844 f  driver/sseg_ca_OBUF_inst_i_11/O
+                         net (fo=7, unplaced)         0.484    32.328    driver/sseg_ca_OBUF_inst_i_11_n_0
+                         LUT6 (Prop_lut6_I2_O)        0.124    32.452 r  driver/sseg_cc_OBUF_inst_i_3/O
+                         net (fo=1, unplaced)         0.902    33.354    driver/sseg_cc_OBUF_inst_i_3_n_0
+                         LUT4 (Prop_lut4_I1_O)        0.124    33.478 r  driver/sseg_cc_OBUF_inst_i_1/O
+                         net (fo=1, unplaced)         0.800    34.278    sseg_cc_OBUF
+                         OBUF (Prop_obuf_I_O)         2.584    36.862 r  sseg_cc_OBUF_inst/O
+                         net (fo=0)                   0.000    36.862    sseg_cc
+                                                                      r  sseg_cc (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+

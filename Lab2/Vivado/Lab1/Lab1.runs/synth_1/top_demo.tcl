@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/jstine/vivado/Demo2/Demo2.runs/synth_1/top_demo.tcl"
+  variable script "C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.runs/synth_1/top_demo.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,28 +70,25 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/jstine/vivado/Demo2/Demo2.cache/wt [current_project]
-set_property parent.project_path /home/jstine/vivado/Demo2/Demo2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.cache/wt [current_project]
+set_property parent.project_path C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/jstine/vivado/Demo2/Demo2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  /home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/digit2segments.sv
-  /home/jstine/vivado/Demo2/Demo2.srcs/sources_1/imports/vivado/segment_driver.sv
-  /home/jstine/vivado/Demo2/Demo2.srcs/sources_1/new/top_demo.sv
+  C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/SV/des_stub.sv
+  C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/digit2segments.sv
+  C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/imports/vivado/segment_driver.sv
+  C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/sources_1/new/top_demo.sv
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -102,8 +99,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/jstine/vivado/Demo2/Demo2.srcs/constrs_1/new/constr.xdc
-set_property used_in_implementation false [get_files /home/jstine/vivado/Demo2/Demo2.srcs/constrs_1/new/constr.xdc]
+read_xdc C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/constrs_1/new/constr.xdc
+set_property used_in_implementation false [get_files C:/Users/cocrowl/Desktop/DLD_Lab2/Lab2/Vivado/Lab1/Lab1.srcs/constrs_1/new/constr.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
@@ -123,6 +120,10 @@ write_checkpoint -force -noxdef top_demo.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
 create_report "synth_1_synth_report_utilization_0" "report_utilization -file top_demo_utilization_synth.rpt -pb top_demo_utilization_synth.pb"
+create_report "synth_1_synth_report_power_0" "report_power -file synth_report_power_0.rpt -pb synth_report_power_summary_0.pb -rpx synth_report_power_0.rpx"
+create_report "synth_1_synth_report_methodology_0" "report_methodology -file synth_report_methodology_0.rpt -pb synth_report_methodology_0.pb -rpx synth_report_methodology_0.rpx"
+create_report "synth_1_synth_report_timing_0" "report_timing -file synth_report_timing_0.rpt -rpx synth_report_timing_0.rpx"
+create_report "synth_1_synth_report_utilization_1" "report_utilization -file top_demo_utilization_synth_1.rpt -pb top_demo_utilization_synth_1.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]

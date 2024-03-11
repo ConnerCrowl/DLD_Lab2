@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1613143460">
-  <File Type="VDS-TIMING-PB" Name="top_demo_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="top_demo_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="top_demo.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="top_demo_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="top_demo_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="top_demo_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="top_demo.vds"/>
-  <File Type="REPORTS-TCL" Name="top_demo_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1710176336">
   <File Type="PA-TCL" Name="top_demo.tcl"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PSRCDIR/sources_1">
+  <File Type="RDS-PROPCONSTRS" Name="top_demo_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="top_demo_reports.tcl"/>
+  <File Type="RDS-RDS" Name="top_demo.vds"/>
+  <File Type="RDS-UTIL" Name="top_demo_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="top_demo_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="top_demo.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="top_demo_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="top_demo_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../../SV/des_stub.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/vivado/digit2segments.sv">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../digit2segments.sv"/>
@@ -39,13 +46,53 @@
       </FileInfo>
     </File>
     <File Path="$PPRDIR/../Demo/archive_project_summary.txt"/>
+    <File Path="$PPRDIR/../../SV/tb_des.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../SV/fa.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../SV/rca8.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../SV/ha.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../../SV/test_rca8.sv">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
       <Option Name="TopModule" Val="top_demo"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/constr.xdc">
       <FileInfo>
@@ -60,7 +107,7 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
